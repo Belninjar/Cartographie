@@ -201,7 +201,7 @@ body {
 }
 
 .day {
-  background-image: url(/Media/planet_texture.jpg);
+  background-image: url(Media/planet_texture.jpg);
   background-size: 200%; /* Adjust background-size as needed */
   border-left: solid 1px black;
   box-shadow: 5px 0 20px 10px #010207 inset;
