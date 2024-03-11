@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle Images</title>
+  <link rel="stylesheet" href="activite_styles.css">
+</head>
+<body>
+  <div class="main-container">
+    <div class="left-container" id="hexContainer">
+      <svg class="zoomed-polygon" viewBox="0 0 86.6 100" overflow="visible" style="width: 2x86.6px; height: 2x100px;">
+        <!-- Define the points for the zoomed polygon -->
+        <polygon id="wrap1" points="43.3 50 2070 -1130 -2070 -1130" fill="rgba(80, 160, 173, 0.3)" stroke="black"></polygon>
+        <polygon id="wrap2" points="43.3 50 2070 -1130 43.3 2000" fill="rgba(0, 210, 77, 0.3)" stroke="black"></polygon>
+        <polygon id="wrap3" points="43.3 50 43.3 2000 -2070 -1130" fill="rgba(148, 119, 225, 0.3)" stroke="black"></polygon>
+        
+
+        <polygon points="0 25 43.3 50 43.3 100 0 75" fill="rgba(148, 119, 225, 0.8)" stroke="black"></polygon>
+        <polygon points="43.3 100 43.3 50 86.6 25 86.6 75"  fill="rgba(0, 210, 77, 0.8)" stroke="black"></polygon>
+        <polygon points="0 25 43.3 50 86.6 25 43.3 0" fill="rgba(80, 160, 173, 0.8)" stroke="black"></polygon>
+
+        <image href="/Media/papers.png" x="1" y="40" width="40" height="40" />
+        <image href="/Media/experimental.png" x="45" y="40" width="40" height="40" />
+        <image href="/Media/simu 2.png" x="28" y="10" width="30" height="30" />
+
+      </svg>
+
+      <p>Text to be wrapped by polygon 1.</p>
+
+    </div>
+    <div class="right-container">
+      <p id="hovered-text"></p>
+    </div>
+  </div>
+  <script src="activite_script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</body>
+</html>

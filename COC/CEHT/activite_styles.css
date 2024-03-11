@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.main-container {
+  display: flex;
+  position: relative;
+  height: 100vh;
+}
+
+.left-container {
+  flex: 3;
+  position: relative;
+  height: 100vh;
+  background-image: url('/Media/planet_texturebis.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden; /* Ensure that overflow is hidden to prevent scrollbars */
+}
+
+
+.right-container {
+  flex: 1;
+  background-color: rgba(149, 119, 255, 0.253);
+  border-left: 4px solid white;
+  position: relative;
+  height: 100vh;
+}
+
+.hexagon {
+  cursor: pointer;
+  position: relative;
+  z-index: 1; /* Ensure it's behind */
+}
+
+
+.zoomed-polygon {
+  position: absolute;
+
+  z-index: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+  transform-origin: center;
+  pointer-events: none;
+
+}
+
+.zoomed-polygon.show {
+  width: 86.6px; /* 86.6 * 2 */
+  height: 100px; /* 100 * 2 */
+  opacity: 1;
+  transform: scale(2); /* Scaling effect */
+  z-index: 2;
+
+}

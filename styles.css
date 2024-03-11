@@ -1,0 +1,198 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  
+}
+
+.main-container {
+  display: flex;
+  position: relative; /* Add this line to establish positioning context */
+  height: 100vh; /* Ensure the container occupies the full height of its parent */
+}
+
+.left-container {
+  flex: 3;
+  position: relative; /* Add this line to establish positioning context */
+  height: 100vh; /* Ensure the container occupies the full height of its parent */
+  background-image: url('Media/bkgnd.jpeg'); /* Specify the path to your image */
+  background-size: cover; /* Cover the entire container with the background image */
+  background-position: center; /* Center the background image */
+  position: relative;
+  height: 100vh;
+}
+
+
+.right-container {
+  flex: 1;
+  background-color: rgba(149, 119, 255, 0.253); /* Example background color for the right container */
+  border-left: 4px solid white;
+  position: relative; /* Add this line to establish positioning context */
+  height: 100vh; /* Ensure the container occupies the full height of its parent */
+}
+
+
+/* CSS for zoom-out effect */
+.left-container.downscaled {
+  transform: scale(0.3); /* Scale down the left container for zoom-out effect */
+}
+
+/* CSS for zoom-in effect */
+.left-container.zoom-in2 {
+  transition: transform 1s ease; /* Apply transition for smooth scaling */
+  transform: scale(1); /* Scale back to normal size for zoom-in effect */
+}
+
+
+.image-container {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Adjust the duration and easing function as needed */
+  width: 80px; /* Adjust size as needed */
+  height: 80px; /* Adjust size as needed */
+  border: 2px solid white;
+  border-radius: 50%; /* Makes the container circular */
+  overflow: hidden; /* Ensures the image stays within the container */
+  margin: 0px; /* Adjust spacing as needed */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  z-index: 1; /* Adjust z-index to a value higher than the .svg-container */
+}
+
+.image-container.show {
+  opacity: 1;
+}
+
+.image-container:hover img {
+  transform: scale(1.2); /* Adjust hover effect */
+  opacity: 1; /* Initially hide the second image */
+  transition: transform 0.3s ease; /* Apply transition for smooth animation */
+}
+
+.image-container img {
+  position: relative; /* Ensure images are on top of curved lines */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the container */
+  opacity: 0.6; /* Initially hide the second image */
+  transition: transform 0.3s ease; /* Apply transition for smooth reverse animation */
+}
+
+
+.image-container2 {
+  position: relative;
+  width: 200px; /* Adjust size as needed */
+  height: 200px; /* Adjust size as needed */
+  overflow: hidden; /* Ensures the image stays within the container */
+  margin: 0px; /* Adjust spacing as needed */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  z-index: 2; /* Adjust z-index to a value higher than the .svg-container */
+  display: inline-block;
+}
+
+.image-container2 img {
+  position: absolute; /* Position the image absolutely within its container */
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the image fills the container */
+  transition: opacity 0.5s ease; /* Smooth transition for opacity change */
+}
+
+.image-container2 img:first-child {
+  opacity: 1; /* Initially show the first image */
+}
+
+.image-container2 img:last-child {
+  opacity: 0; /* Initially hide the second image */
+}
+
+.image-container2:hover img:first-child {
+  opacity: 0; /* Hide the first image on hover */
+}
+
+.image-container2:hover img:last-child {
+  opacity: 1; /* Show the second image on hover */
+}
+
+.image-container3 {
+  position: absolute;
+  width: 150px; /* Adjust size as needed */
+  height: 150px; /* Adjust size as needed */
+  overflow: hidden; /* Ensures the image stays within the container */
+  margin: 0px; /* Adjust spacing as needed */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  z-index: 0; /* Adjust z-index to a value higher than the .svg-container */
+}
+
+.image-container3 img {
+  position: absolute; /* Position the image absolutely within its container */
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the image fills the container */
+}
+
+
+.title {
+  position: absolute;
+  top: 50%; /* Adjust vertically as needed */
+  left: 50%; /* Adjust horizontally as needed */
+  transform: translate(-50%, -30%);
+  color: white;
+  font-size: 24px; /* Adjust font size as needed */
+  font-weight: bold;
+  opacity: 0; /* Initially hide the title */
+  transition: opacity 0.3s ease; /* Apply transition for smooth appearance */
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black; /* Add an outline effect */
+}
+
+.image-container:hover .title {
+  opacity: 1; /* Show the title on hover */
+  transition: opacity 0.3s ease; /* Apply transition for smooth appearance */
+}
+
+
+.svg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgb(157, 59, 59);
+  z-index: -1; /* Ensure SVG lines are behind images */
+}
+
+.svg-container path {
+  stroke-width: 4px; /* Initial thickness of the link */
+  transition: stroke-width 0.3s ease; /* Smooth transition for thickness change */
+}
+
+.svg-container path:hover {
+  stroke-width: 8px; /* Thickness of the link on hover */
+}
+/* Add your SVG container and SVG path CSS here */
+
+
+#hovered-text {
+  color: white;
+  font-size: 26px;
+  position: absolute;
+  top: 5%; /* Center vertically */
+  left: 5%; /* Center horizontally */
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Ensure the overlay doesn't interfere with clicks */
+  transition: opacity 0.4s ease-in-out; /* Smooth transition for opacity change */
+  z-index: 3;
+}
+

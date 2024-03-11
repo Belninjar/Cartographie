@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle Images</title>
+  <link rel="stylesheet" href="COC_styles.css">
+</head>
+<body>
+  <div class="main-container">
+    <div class="left-container">
+      <div class="overlay_in"></div>
+      <div class="overlay_out"></div>
+      <div class="container">
+        <div class="image-container" style="position: absolute; left: 80%; top: 50%; transform: translate(-50%, -50%);" data-page-url="CEHT/Vieillissement.html" data-text="énergie haute tensio azaz" data-angle="0" data-coords="650,450">
+            <img src="\Media\CEHT.png" alt="Image 1">
+            <div class="title">Vieillissement</div>
+        </div>
+        <div class="image-container" style="position: absolute; left: 50%; top: 85%; transform: translate(-50%, -50%);" data-page-url="CEHT/DP.html" data-text="Text for Image 1" data-angle="90" data-angle="0" data-coords="530,300">
+            <img src="\Media\CEHD.png" alt="Image 2">
+            <div class="title">DP</div>
+        </div>
+        <div class="image-container" style="position: absolute; left: 20%; top: 50%; transform: translate(-50%, -50%);" data-page-url="Earth.html" data-text="Text for Image 1" data-angle="180" data-angle="0" data-coords="500,430">
+            <img src="\Media\CEHF.png" alt="Image 3">
+            <div class="title">Arcs</div>
+        </div>
+        <div class="image-container" style="position: absolute; left: 50%; top: 15%; transform: translate(-50%, -50%);" data-page-url="Earth.html" data-text="Text for Image 1" data-angle="270" data-angle="0" data-coords="600,300">
+            <img src="\Media\4.png" alt="Image 4">
+            <div class="title">Diélectriques</div>
+        </div>
+        <div class="image-container2" style="position: absolute; left: 13%; top: 13%; transform: translate(-50%, -50%);" data-page-url="https://www.irt-saintexupery.com/">
+          <img src="Media\IRT.png" alt="Initial Image">
+          <img src="Media\IRT2.png" alt="Hover Image">
+      </div>
+     
+          <!-- Add more image containers as needed -->
+      </div>
+      <div class="planet-container" style="transform: translate(-50%, -50%);">
+        <div class="day"></div>
+      </div>
+      <svg class="svg-container">
+        <!-- SVG paths for curved lines will be added dynamically -->
+      </svg>
+    </div>
+    <div class="right-container">
+      <p id="hovered-text"></p> <!-- Element to display hovered text -->
+      <!-- Content for the right container -->
+    </div>
+  </div>
+  <script src="script_COC.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</body>
+</html>
