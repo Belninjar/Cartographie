@@ -14,7 +14,7 @@ body {
   flex: 3;
   position: relative;
   height: 100vh;
-  background-image: url('/Media/planet_texturebis.jpg');
+  background-image: url('Media/planet_texturebis.jpg');
   background-size: cover;
   background-position: center;
   overflow: hidden; /* Ensure that overflow is hidden to prevent scrollbars */
